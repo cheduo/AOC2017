@@ -1,4 +1,4 @@
-# AOC2017
+# Advent of Code 2017 in Q
 
 Q solution for Advent of Code 2017
 

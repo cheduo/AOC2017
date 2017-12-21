@@ -3,12 +3,18 @@
 // day 1
 k)+/0'@/1(&(=':).|last \)[1;]\"91212129" /part1
 k)2*+/0'@/1(&=/2 0N#)\"12131415" /part2
-// continue to commit solution for following days.
 // day 2
 sum(-/)flip(max;min)@\:/:0@'("5 1 9 5";"7 5 3";"2 4 6 8")
 (sum/) r*min(r=floor@;1<>)@\:r:x%/:'x:0@'("5 9 2 8";"9 4 7 3";"3 8 6 5")
 // day 3
+l+mod[;l]n-i*i:-1+2*l:floor 0.5*sqrt n:277678 /parr1
 // to continue
+// day 3 part2 is not trivial, to finish tomorrow.
+l cross l:-1 0 1
+(raze 1+2#'til 10)#raze (reverse\')(neg\) 0 1
+(!/)flip enlist (0 0;1)
+('[;]/)(+;-)
+
 {x 1+x?2017} enlist[0] {raze((;y 0;).)(0;y 1)_ x}/flip 1{1+mod[x+312;y]}\[1;]\l:1+til 201
 {$[x<=z;(x+1;z;z+1);(x;y;z)}
 {1+mod[x+312;y]}
