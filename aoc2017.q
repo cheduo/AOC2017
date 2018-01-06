@@ -25,25 +25,29 @@ neg (-/)where l~\:last l:last lists /part2
 // http://archive.vector.org.uk/art10500340
 t : flip`p`v`c!flip("S"$first@;0@[;1]@;"S"$3_)@\:/:" "vs/:ssr[;",";""]@'read0`:/Users/cheduo/d7.txt;
 cv: `c`v xcol`p`v#t;
-@[;`c] first trt: `p xasc cv lj 1!ungroup`c`p#t // part1
+@[;`c] first trt: `p xasc cv lj 1!ungroup`c`p#t /part1
 acct : update @[v;c?path;+;v] from update path: 1_'(c!p)\'[c]from @[;`p;trt[`c]^]trt;
 t2   : `c`v#select from acct where 1<>(count distinct@;v) fby p,(=/)1 max\count@'path(=/)1 max\count@'path;
 delta:(last/) deltas group asc exec count[c] by v from t2;
-first delta+@[;`v](1!cv)@ k : select c from t2 where 1=(count;c) fby v //part2
+first delta+@[;`v](1!cv)@ k : select c from t2 where 1=(count;c) fby v /part2
 // day 8
-funcs : {0"{if[",x[1],";",x[0],"]}"}@'" if " vs/:ssr[;"[xyz]";upper]@'ssr/[;("inc";"dec";"==";"!=");("+:";"-:";"=";"<>")]@'read0 `:/Users/cheduo/d8.txt;
+cmmds : ssr[;"[xyz]";upper]@'ssr/[;("inc";"dec";"==";"!=");("+:";"-:";"=";"<>")]@'read0 `:/Users/cheduo/d8.txt;
+funcs : {0"{if[",x[1],";",x[0],"]}"}@'" if " vs/: cmmds;
 parms : except[;`] distinct raze (@[;3] 0@)@'funcs;
-set'[;0] parms; @'[;0]funcs; max 0@'parms //part1
-set'[;0] parms; max {x 0;max 0@'parms}@'funcs //part2
+set'[;0] parms; @'[;0]funcs; max 0@'parms /part1
+set'[;0] parms; max {x 0;max 0@'parms}@'funcs /part2
 // day 9
 l:(@/)1(where(?\[1b;;].)@[;0;not]"<>"=\:)\o:ssr[;"!?";""]first read0`:/Users/cheduo/d9.txt
-sum (@/)(sums sum @[;1;neg]@;where first @)@\:"{}"=\:l //part1
-(neg sum ">"=l)+(-/)count@'(o;l) //part2
+sum (@/)(sums sum @[;1;neg]@;where first @)@\:"{}"=\:l /part1
+(neg sum ">"=l)+(-/)count@'(o;l) /part2
 // day 10
 l:187 254 0 81 169 219 1 190 19 102 255 56 46 32 2 216
 o:`l`p`s!(til n:256;0;0)
 f:{x[`l;i]:l reverse i:mod[;count l:x`l]x[`p]+til y;x[`p`s]:(y+sum x`p`s;1+x`s);x};
 xor : 0b sv (<>/) 0b vs';
 knot:last@'0x0 vs' xor @'16 cut @[;`l]f/[o;]raze 64#enlist,[;17 31 73 47 23]"j"$;
-(*/)2#@[;`l]o f/l //part1
-knot"187,254,0,81,169,219,1,190,19,102,255,56,46,32,2,216" //part2
+(*/)2#@[;`l]o f/l /part1
+knot"187,254,0,81,169,219,1,190,19,102,255,56,46,32,2,216" /part2
+// day 11
+0.5*sum abs 2 sum/ 0^(("ew";"ns")!\:-1 1)@\:2#'","vs first read0`:/Users/cheduo/d11.txt /part1
+0.5*max sum@'abs sums sum 0^(("ew";"ns")!\:-1 1)@\:2#'","vs first read0`:/Users/cheduo/d11.txt /part2
