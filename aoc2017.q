@@ -39,3 +39,11 @@ set'[;0] parms; max {x 0;max 0@'parms}@'funcs //part2
 l:(@/)1(where(?\[1b;;].)@[;0;not]"<>"=\:)\o:ssr[;"!?";""]first read0`:/Users/cheduo/d9.txt
 sum (@/)(sums sum @[;1;neg]@;where first @)@\:"{}"=\:l //part1
 (neg sum ">"=l)+(-/)count@'(o;l) //part2
+// day 10
+l:187 254 0 81 169 219 1 190 19 102 255 56 46 32 2 216
+o:`l`p`s!(til n:256;0;0)
+f:{x[`l;i]:l reverse i:mod[;count l:x`l]x[`p]+til y;x[`p`s]:(y+sum x`p`s;1+x`s);x};
+xor : 0b sv (<>/) 0b vs';
+knot:last@'0x0 vs' xor @'16 cut @[;`l]f/[o;]raze 64#enlist,[;17 31 73 47 23]"j"$;
+(*/)2#@[;`l]o f/l //part1
+knot"187,254,0,81,169,219,1,190,19,102,255,56,46,32,2,216" //part2
