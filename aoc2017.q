@@ -41,8 +41,8 @@ l:(@/)1(where(?\[1b;;].)@[;0;not]"<>"=\:)\o:ssr[;"!?";""]first read0`:/Users/che
 sum (@/)(sums sum @[;1;neg]@;where first @)@\:"{}"=\:l /part1
 (neg sum ">"=l)+(-/)count@'(o;l) /part2
 // day 10
-l:187 254 0 81 169 219 1 190 19 102 255 56 46 32 2 216
-o:`l`p`s!(til n:256;0;0)
+l:187 254 0 81 169 219 1 190 19 102 255 56 46 32 2 216;
+o:`l`p`s!(til n:256;0;0);
 f:{x[`l;i]:l reverse i:mod[;count l:x`l]x[`p]+til y;x[`p`s]:(y+sum x`p`s;1+x`s);x};
 xor : 0b sv (<>/) 0b vs';
 knot:last@'0x0 vs' xor @'16 cut @[;`l]f/[o;]raze 64#enlist,[;17 31 73 47 23]"j"$;
@@ -51,3 +51,16 @@ knot"187,254,0,81,169,219,1,190,19,102,255,56,46,32,2,216" /part2
 // day 11
 0.5*sum abs 2 sum/ 0^(("ew";"ns")!\:-1 1)@\:2#'","vs first read0`:/Users/cheduo/d11.txt /part1
 0.5*max sum@'abs sums sum 0^(("ew";"ns")!\:-1 1)@\:2#'","vs first read0`:/Users/cheduo/d11.txt /part2
+// day 12
+dic:(!/)flip(0@'"<->"vs)@'read0`:/Users/cheduo/d12.txt;
+t  :((asc distinct raze@)@'dic@)/[dic];
+sum 0 in' t /part1
+count distinct value t /part2
+// day 13
+d  :("JJ";":")0:`:/Users/cheduo/d13.txt;
+sum (*/)d@\:where 0=(mod/)@[;1;2*-1+] d /part1
+(any 0=mod[;2*-1+d 1]d[0]+)(1+)/0 /part2
+// day 14
+g :(raze 0b vs' knot@)@'"ljoxqyyw-",/:string til 128;
+sum sum @'g /part1
+r:0;l{if[g[x;y];{if[.[g;x];.[`g;x;:;0b];.z.s@'count[g]&0|x+/:raze 1 reverse\'0,'-1 1]}(x;y);r+:1]}/:\:l:til count g;r /part2
