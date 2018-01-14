@@ -78,3 +78,8 @@ fs:"sxp"!({(neg 0 y) rotate x};{@[x;i;:;] x reverse i:"J"$"/" vs y};{@[x;;:;r] r
 prg : {fs[y 0;x;1_y]}/[;i];
 prg l /part1
 (1000000000 mod count prg\[l]) prg/ l /part2
+// day 17
+s:`a`p`v!(0;0;1#0);
+exec v p+1 from 2017 {update raze @[;1;a,](0;p)_v from update p: 1+mod[p+3; count v], a:a+1 from x}/s /part1
+s:`a`p0`p`v!(0;0;0;0);
+exec v from 50000000{update p0:p0+p<p0, v:?[1=p-p0;a;v] from update a+1, p: 1+mod[p+3; a+1] from x}/s /part2
