@@ -64,3 +64,17 @@ sum (*/)d@\:where 0=(mod/)@[;1;2*-1+] d /part1
 g :(raze 0b vs' knot@)@'"ljoxqyyw-",/:string til 128;
 sum sum @'g /part1
 r:0;l{if[g[x;y];{if[.[g;x];.[`g;x;:;0b];.z.s@'count[g]&0|x+/:raze 1 reverse\'0,'-1 1]}(x;y);r+:1]}/:\:l:til count g;r /part2
+// day 15
+A:`v`m`d`c!65   16807 2147483647 4j;
+B:`v`m`d`c!8921 48271 2147483647 8j;
+chk: {(=/)mod[;65536]x`v};
+f  : {update v:(v*m) mod d from x};
+res:0;40000000{if[chk x;res+:1];f x}/(A;B);res /part1
+res:0;5000000{if[chk x;res+:1];{{0<>(mod/)x`v`c}f/f[x]}@'x}(A;B);res /part2
+// day 16
+i : "," vs first read0`:/Users/cheduo/d16.txt;
+l : 16#.Q.a;
+fs:"sxp"!({(neg 0 y) rotate x};{@[x;i;:;] x reverse i:"J"$"/" vs y};{@[x;;:;r] reverse i:x?r:y except"/"});
+prg : {fs[y 0;x;1_y]}/[;i];
+prg l /part1
+(1000000000 mod count prg\[l]) prg/ l /part2
