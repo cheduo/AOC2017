@@ -85,3 +85,22 @@ s:`a`p0`p`v!(0;0;0;0);
 exec v from 50000000{update p0:p0+p<p0, v:?[1=p-p0;a;v] from update a+1, p: 1+mod[p+3; a+1] from x}/s /part2
 // day 18
 // part2 is more suitable for oop, my solution in Q is quite long, I don't put it here.
+// day 19
+m: read0 `:/Users/cheduo/d19.txt; //map
+s: `l`c`v`p!("";0;1 0;)0, first where not null m 0; /state
+while[not null o: m . s`p;
+  $[0=c:"+|-"?o;
+    s[`v]:sum v*not null (m . s[`p]+)@'v:1 neg\reverse s`v;
+    3=c; s[`l],:o;];
+  s[`p`c]+:(s[`v];1);];
+s`l`c /part1 & 2
+// day 20
+t:(`X`Y`Z!0@)@''(!/)@'("S=;")0:/:ssr/[;("<>,");" ; "]@'read0`:/Users/cheduo/d20.txt;
+first iasc sum@'abs t`a; /part1
+cnt : 0;
+while[
+0N!count t;
+t : update p:p+v, v:v+a from delete from t where 1<(count;i) fby t`p;
+cnt +: count l: any (all 0=rank @'flip@) @' flip value@'' flip@' t;
+t : delete from t where l];
+cnt
