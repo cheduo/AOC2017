@@ -96,11 +96,6 @@ while[not null o: m . s`p;
 s`l`c /part1 & 2
 // day 20
 t:(`X`Y`Z!0@)@''(!/)@'("S=;")0:/:ssr/[;("<>,");" ; "]@'read0`:/Users/cheduo/d20.txt;
-first iasc sum@'abs t`a; /part1
-cnt : 0;
-while[
-0N!count t;
-t : update p:p+v, v:v+a from delete from t where 1<(count;i) fby t`p;
-cnt +: count l: any (all 0=rank @'flip@) @' flip value@'' flip@' t;
-t : delete from t where l];
-cnt
+first iasc sum flip abs t`a /part1
+g:{update p+v from update v+a from delete from x where 1<(count;i) fby x`p};
+{while[count x;y+:sum o:max flip (~'\:/) 1 max\ flip@'x:g x;x@:where not o];y}[t;0] /part2
