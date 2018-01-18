@@ -105,7 +105,7 @@ enhance   : (!/) flip "/"vs''" => "vs/:read0`:/Users/cheduo/d21.txt;
 reproduce : ('[;]/)('[;]/')raze,'(flip\';reverse\';reverse'\');
 transform : first desc enhance reproduce enlist @;
 split     : {flip @' y cut y cut' x};
-merge     : raze (,'/)@';
+merge     : (')[,/;,'/'];
 iter      : merge transform@''(split/) (2+mod[;2] count@)\[1;]@;
 sum/["#"=5 iter/ i] /part1
 sum/["#"=18 iter/ i] /part2
