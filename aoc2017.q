@@ -99,3 +99,13 @@ t:(`X`Y`Z!0@)@''(!/)@'("S=;")0:/:ssr/[;("<>,");" ; "]@'read0`:/Users/cheduo/d20.
 first iasc sum flip abs t`a /part1
 g:{update p+v from update v+a from delete from x where 1<(count;i) fby x`p};
 {while[count x;y+:sum o:max flip (~'\:/) 1 max\ flip@'x:g x;x@:where not o];y}[t;0] /part2
+// day 21
+i         : (".#.";"..#";"###");
+enhance   : (!/) flip "/"vs''" => "vs/:read0`:/Users/cheduo/d21.txt;
+reproduce : ('[;]/)('[;]/')raze,'(flip\';reverse\';reverse'\');
+transform : first desc enhance reproduce enlist @;
+split     : {flip @' y cut y cut' x};
+merge     : raze (,'/)@';
+iter      : merge transform@''(split/) (2+mod[;2] count@)\[1;]@;
+sum/["#"=5 iter/ i] /part1
+sum/["#"=18 iter/ i] /part2
