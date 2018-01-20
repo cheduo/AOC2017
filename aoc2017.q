@@ -109,3 +109,14 @@ merge     : (')[,/;,'/'];
 iter      : merge transform@''(split/) (2+mod[;2] count@)\[1;]@;
 sum/["#"=5 iter/ i] /part1
 sum/["#"=18 iter/ i] /part2
+// day 22
+l  : neg r: sum (0 -1;1 0)*;
+cd :`c`w`i`f!(l;::;r;neg); /change direction
+cs1:(!/)1 rotate[1]\`i`c; /change state part1
+cs2:(!/)1 rotate[1]\`c`w`i`f; /change state part2
+m  :(!/)1 :'[;`i]\`u#raze (,''/)reverse 1 (til count@)\where@'"#"=read0`:/Users/cheduo/d22.txt; /map
+s  :`c`v`p!(0;-1 0;)"j"$0.5*max key m; / state
+f1  :{[s] m[p]:cs1 o:`c^m p:s`p;s[`p]+:s[`v]:cd[o]s`v;@[s;`c;+;]o=`c};
+@[;`c] 10000 f/ s /part 1
+f2  :{[s] m[p]:cs2 o:`c^m p:s`p;s[`p]+:s[`v]:cd[o]s`v;@[s;`c;+;]o=`w};
+@[;`c] 10000000 f/ s /part 2
