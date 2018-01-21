@@ -120,3 +120,17 @@ f1  :{[s] m[p]:cs1 o:`c^m p:s`p;s[`p]+:s[`v]:cd[o]s`v;@[s;`c;+;]o=`c};
 @[;`c] 10000 f/ s /part 1
 f2  :{[s] m[p]:cs2 o:`c^m p:s`p;s[`p]+:s[`v]:cd[o]s`v;@[s;`c;+;]o=`w};
 @[;`c] 10000000 f/ s /part 2
+// day 23
+// the Q solution is not elegent enough to be published
+// day 24
+m : flip ("JJ";"/")0:read0`:/Users/cheduo/d24.txt; /material
+c : {$[count p:where max flip l:last[x]=y;raze .z.s'[x,/:(@'/)(y;not l)@\:p;y _/:p];enlist x]}[1#0;m];
+max sum@'c /part 1
+last first desc flip (count';sum')@\:c /part 2
+// day 25
+r : read0`:/Users/cheduo/d25.txt;
+n : 0 first -2#" " vs r 1;
+dic : (!/)flip (@[;0;first`$]@[;1;(!/)@[;0;raze]flip (0 1_"JJSS"$)@'2 0N#]0 1_-1_'last@'" "vs/: 1_)@'10 cut 2_r;
+tape: (!/)2 1#0;
+s :  `s`p!(`A;0);
+sum last n ({[s;tape]arg:dic[s`s;0^tape p:s`p];s[`p]+:(`left`right!-1 1)arg 1;(@[s;`s;:;arg 2];@[tape;p;:;arg 0])}.)/(s;tape) /part 1
