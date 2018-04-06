@@ -11,3 +11,9 @@ first, second = np.array(list(l),int).reshape((2,-1))
 # Q2
 l = open(os.path.join(root, 'd2.txt')).read().strip()
 sum(max(i)-min(i) for i in map(lambda x: np.array(x.split('\t'),int),l.split('\n'))) #part1
+
+ret, m = 0, np.array(list(map(str.split,l.split('\n'))),int)
+for i in range(1,len(m[0])):
+    ratio = m/np.roll(m,i,axis=1)
+    ret  += ratio[np.vectorize(float.is_integer)(ratio)].sum()
+ret #part2
