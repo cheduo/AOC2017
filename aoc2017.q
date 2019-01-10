@@ -8,7 +8,7 @@ k)2*+/0'@/1(&=/2 0N#)\"12131415" /part2
 sum(-/)flip(max;min)@\:/:0@'("5 1 9 5";"7 5 3";"2 4 6 8") /part1
 (sum/) r*min(r=floor@;1<>)@\:r:x%/:'x:0@'("5 9 2 8";"9 4 7 3";"3 8 6 5") /part2
 // day 3
-l+mod[;l]n-i*i:-1+2*l:floor 0.5*sqrt n:277678 /parr1
+l+mod[;l]n-i*i:-1+2*l:"j"$0.5*sqrt n:277678 /parr1
 k){@/1(binr[;x]@)\(*:(x>|/*:)(,/|(,+\+/0^-1 0 1 .q.xprev\:*:)\[1;]@|+:)/1 1#1)}n:277678 /part2
 // day 4
 sum @'[{`u#x;1};;0] " " vs' read0 `:/Users/cheduo/d4.txt /part1
