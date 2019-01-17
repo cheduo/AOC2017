@@ -15,8 +15,8 @@ sum @'[{`u#x;1};;0] " " vs' read0 `:/Users/cheduo/d4.txt /part1
 sum @'[{`u#asc@'x;1};;0] " " vs' read0 `:/Users/cheduo/d4.txt /part2
 // day 5
 init : {`l set "J"$read0`:/Users/cheduo/d5.txt} ;
-init[]; -1+count{not null l x}{l[x]+:i;x+l[x]-i}\0 /part1
-init[]; -1+count{not null l x}{l[x]+:i:-1 1 l[x]<3;x+l[x]-i}\0 /part2
+init`; -1+count{not null l x}{l[x]+:i;x+l[x]-i}\0 /part1
+init`; -1+count{not null l x}{l[x]+:i:-1 1 l[x]<3;x+l[x]-i}\0 /part2
 // day 6
 lists : {x~distinct x}{x,enlist{x[mod[;count[x]]1+til[m]+i:x?m:max x]+:1;@[x;i;-;m]}last x}\enlist 0 2 7 0 ;
 -1+count lists /part1
